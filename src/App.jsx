@@ -55,7 +55,6 @@ export default function App() {
       {/* Admin */}
       <Route path="/admin" element={<AdminDashboard />} />
       <Route path="/admin/users" element={<UserManagement />} />
-      <Route path="/admin/roles" element={<UserManagement roleView />} />
       <Route path="/admin/countries" element={<CountryManagement />} />
       <Route path="/admin/schools" element={<SchoolManagement />} />
       <Route path="/admin/programs" element={<ProgramManagement />} />

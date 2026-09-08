@@ -11,7 +11,7 @@ const statusStyle = {
   Active: 'bg-success-50 text-success-500', Invited: 'bg-amber-50 text-amber-700', Suspended: 'bg-red-50 text-red-600',
 }
 
-export default function UserManagement({ roleView = false }) {
+export default function UserManagement() {
   const [query, setQuery] = useState('')
   const [inviteOpen, setInviteOpen] = useState(false)
   const [editUser, setEditUser] = useState(null)
@@ -19,7 +19,7 @@ export default function UserManagement({ roleView = false }) {
   const filtered = users.filter((u) => u.name.toLowerCase().includes(query.toLowerCase()))
 
   return (
-    <DashboardShell role="admin" title={roleView ? 'Role Management' : 'User Management'}>
+    <DashboardShell role="admin" title="User Management">
       <Card className="p-5">
         <div className="mb-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <div className="relative w-full sm:max-w-xs">

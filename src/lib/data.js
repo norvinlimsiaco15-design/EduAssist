@@ -12,12 +12,27 @@ export const countries = [
 ]
 
 export const schools = [
-  { id: 1, name: 'University of Melbourne', country: 'Australia', flag: '🇦🇺', programs: ['Business', 'IT', 'Engineering'], tuition: '$32,000/yr', logo: '🏛️', image: 'https://images.unsplash.com/photo-1592280771190-3e2e4d571952?w=900&q=80' },
-  { id: 2, name: 'University of Toronto', country: 'Canada', flag: '🇨🇦', programs: ['Computer Science', 'Nursing'], tuition: '$28,500/yr', logo: '🏛️', image: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=900&q=80' },
-  { id: 3, name: 'Technical University of Munich', country: 'Germany', flag: '🇩🇪', programs: ['Engineering', 'Data Science'], tuition: '$2,500/yr', logo: '🏛️', image: 'https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=900&q=80' },
-  { id: 4, name: 'University of Auckland', country: 'New Zealand', flag: '🇳🇿', programs: ['Architecture', 'Business'], tuition: '$26,000/yr', logo: '🏛️', image: 'https://images.unsplash.com/photo-1469521669194-babb45599def?w=900&q=80' },
-  { id: 5, name: 'University of Manchester', country: 'United Kingdom', flag: '🇬🇧', programs: ['Law', 'Economics'], tuition: '£24,000/yr', logo: '🏛️', image: 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=900&q=80' },
-  { id: 6, name: 'IE University', country: 'Spain', flag: '🇪🇸', programs: ['International Relations'], tuition: '€13,200/yr', logo: '🏛️', image: 'https://images.unsplash.com/photo-1583422409516-2895a77efded?w=900&q=80' },
+  { id: 1, name: 'University of Melbourne', country: 'Australia', flag: '🇦🇺', programs: ['Business', 'IT', 'Engineering'], tuition: '$32,000/yr', tuitionUSD: 22400, logo: '🏛️', image: 'https://images.unsplash.com/photo-1592280771190-3e2e4d571952?w=900&q=80' },
+  { id: 2, name: 'University of Toronto', country: 'Canada', flag: '🇨🇦', programs: ['Computer Science', 'Nursing'], tuition: '$28,500/yr', tuitionUSD: 20200, logo: '🏛️', image: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=900&q=80' },
+  { id: 3, name: 'Technical University of Munich', country: 'Germany', flag: '🇩🇪', programs: ['Engineering', 'Data Science'], tuition: '$2,500/yr', tuitionUSD: 2700, logo: '🏛️', image: 'https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=900&q=80' },
+  { id: 4, name: 'University of Auckland', country: 'New Zealand', flag: '🇳🇿', programs: ['Architecture', 'Business'], tuition: '$26,000/yr', tuitionUSD: 15800, logo: '🏛️', image: 'https://images.unsplash.com/photo-1469521669194-babb45599def?w=900&q=80' },
+  { id: 5, name: 'University of Manchester', country: 'United Kingdom', flag: '🇬🇧', programs: ['Law', 'Economics'], tuition: '£24,000/yr', tuitionUSD: 30400, logo: '🏛️', image: 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=900&q=80' },
+  { id: 6, name: 'IE University', country: 'Spain', flag: '🇪🇸', programs: ['International Relations'], tuition: '€13,200/yr', tuitionUSD: 14300, logo: '🏛️', image: 'https://images.unsplash.com/photo-1583422409516-2895a77efded?w=900&q=80' },
+  { id: 7, name: 'University of California, Los Angeles', country: 'United States', flag: '🇺🇸', programs: ['Computer Science', 'Business', 'Engineering'], tuition: '$38,000/yr', tuitionUSD: 38000, logo: '🏛️', image: 'https://images.unsplash.com/photo-1485738422979-f5c462d49f74?w=900&q=80' },
+  { id: 8, name: 'New York University', country: 'United States', flag: '🇺🇸', programs: ['Business', 'Law', 'Data Science'], tuition: '$56,000/yr', tuitionUSD: 56000, logo: '🏛️', image: 'https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=900&q=80' },
+  { id: 9, name: 'National University of Singapore', country: 'Singapore', flag: '🇸🇬', programs: ['Computer Science', 'Engineering', 'Business'], tuition: 'S$22,000/yr', tuitionUSD: 16300, logo: '🏛️', image: 'https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=900&q=80' },
+  { id: 10, name: 'Nanyang Technological University', country: 'Singapore', flag: '🇸🇬', programs: ['Engineering', 'IT', 'Data Science'], tuition: 'S$18,500/yr', tuitionUSD: 13700, logo: '🏛️', image: 'https://images.unsplash.com/photo-1565967511849-76a60a69faaf?w=900&q=80' },
+  { id: 11, name: 'Seoul National University', country: 'South Korea', flag: '🇰🇷', programs: ['Engineering', 'Computer Science', 'International Relations'], tuition: '₩10M/yr', tuitionUSD: 7300, logo: '🏛️', image: 'https://images.unsplash.com/photo-1517154421773-0529f29ea451?w=900&q=80' },
+  { id: 12, name: 'Korea University', country: 'South Korea', flag: '🇰🇷', programs: ['Business', 'Economics', 'IT'], tuition: '₩12M/yr', tuitionUSD: 8800, logo: '🏛️', image: 'https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=900&q=80' },
+  { id: 13, name: 'University of Malta', country: 'Malta', flag: '🇲🇹', programs: ['IT', 'Business', 'International Relations'], tuition: '€8,500/yr', tuitionUSD: 9200, logo: '🏛️', image: 'https://images.unsplash.com/photo-1602343168117-bb8ffe3e2e9f?w=900&q=80' },
+  { id: 14, name: 'Middlesex University Malta', country: 'Malta', flag: '🇲🇹', programs: ['Computer Science', 'Business'], tuition: '€12,500/yr', tuitionUSD: 13500, logo: '🏛️', image: 'https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=900&q=80' },
+]
+
+export const tuitionRanges = [
+  { id: 'any', label: 'Any' },
+  { id: 'under15', label: 'Under $15,000/yr', min: 0, max: 14999 },
+  { id: 'mid', label: '$15,000–30,000/yr', min: 15000, max: 30000 },
+  { id: 'over30', label: '$30,000+/yr', min: 30001, max: Infinity },
 ]
 
 export const applications = [

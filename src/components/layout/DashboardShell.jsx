@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import {
   LayoutDashboard, Globe2, Building2, Calculator, ArrowLeftRight, FileText,
   Folder, User, Users, ClipboardList, School, BarChart3, Settings, Wallet,
-  ShieldCheck, ScrollText, Bell, Search, ChevronDown, Menu, X, LogOut,
+  ScrollText, Bell, Search, ChevronDown, Menu, X, LogOut,
 } from 'lucide-react'
 import Modal from '../ui/Modal'
 import Button from '../ui/Button'
@@ -33,7 +33,6 @@ const NAVS = {
   admin: [
     { to: '/admin', label: 'Dashboard', icon: LayoutDashboard, end: true },
     { to: '/admin/users', label: 'User Management', icon: Users },
-    { to: '/admin/roles', label: 'Role Management', icon: ShieldCheck },
     { to: '/admin/countries', label: 'Countries', icon: Globe2 },
     { to: '/admin/schools', label: 'Schools', icon: School },
     { to: '/admin/programs', label: 'Programs', icon: ClipboardList },

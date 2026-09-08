@@ -10,12 +10,39 @@ const COLORS = ['#2563EB', '#60A5FA', '#F59E0B', '#16A34A', '#8B5CF6', '#F97316'
 
 export default function CostCalculator({ portal = 'student' }) {
   const [destination, setDestination] = useState('Australia')
+  const [schoolId, setSchoolId] = useState(() => schools.find((s) => s.country === 'Australia')?.id ?? schools[0].id)
+  const [program, setProgram] = useState(() => {
+    const school = schools.find((s) => s.country === 'Australia') || schools[0]
+    return school.programs[0]
+  })
   const [tuition, setTuition] = useState(24000)
   const [living, setLiving] = useState(14400)
   const [processing, setProcessing] = useState(650)
   const [visa, setVisa] = useState(710)
   const [medical, setMedical] = useState(300)
   const [other, setOther] = useState(500)
+
+  const schoolsInCountry = useMemo(
+    () => schools.filter((s) => s.country === destination),
+    [destination],
+  )
+  const selectedSchool = schoolsInCountry.find((s) => s.id === schoolId) || schoolsInCountry[0]
+  const programs = selectedSchool?.programs ?? []
+
+  const onDestinationChange = (name) => {
+    setDestination(name)
+    const nextSchools = schools.filter((s) => s.country === name)
+    const nextSchool = nextSchools[0]
+    setSchoolId(nextSchool?.id)
+    setProgram(nextSchool?.programs[0] || '')
+  }
+
+  const onSchoolChange = (id) => {
+    const nextId = Number(id)
+    setSchoolId(nextId)
+    const nextSchool = schools.find((s) => s.id === nextId)
+    setProgram(nextSchool?.programs[0] || '')
+  }
 
   const currency = countries.find((c) => c.name === destination)?.currency || 'AUD'
   const rate = FX_TO_PHP[currency] || 40
@@ -38,14 +65,14 @@ export default function CostCalculator({ portal = 'student' }) {
         <Card className="p-6 lg:col-span-3">
           <h3 className="mb-5 font-display text-base font-semibold text-ink-900">Trip Details</h3>
           <div className="grid gap-4 sm:grid-cols-2">
-            <Select label="Destination" value={destination} onChange={(e) => setDestination(e.target.value)}>
+            <Select label="Destination" value={destination} onChange={(e) => onDestinationChange(e.target.value)}>
               {countries.map((c) => <option key={c.code}>{c.name}</option>)}
             </Select>
-            <Select label="School">
-              {schools.map((s) => <option key={s.id}>{s.name}</option>)}
+            <Select label="School" value={selectedSchool?.id ?? ''} onChange={(e) => onSchoolChange(e.target.value)}>
+              {schoolsInCountry.map((s) => <option key={s.id} value={s.id}>{s.name}</option>)}
             </Select>
-            <Select label="Program" className="sm:col-span-2">
-              <option>BS Information Technology</option><option>BS Business Administration</option><option>MS Data Science</option>
+            <Select label="Program" className="sm:col-span-2" value={program} onChange={(e) => setProgram(e.target.value)}>
+              {programs.map((p) => <option key={p}>{p}</option>)}
             </Select>
           </div>
 

@@ -5,6 +5,7 @@ import DashboardShell from '../../components/layout/DashboardShell'
 import Card from '../../components/ui/Card'
 import { Badge, AnimatedCounter, ProgressBar } from '../../components/ui/Misc'
 import { applications, timelineStages } from '../../lib/data'
+import { getSession } from '../../lib/accounts'
 
 const stats = [
   { label: 'Applications', value: 3, icon: FileText, color: 'bg-primary-50 text-primary-600' },
@@ -15,8 +16,9 @@ const stats = [
 
 export default function StudentDashboard() {
   const currentStageIndex = 2
+  const firstName = (getSession()?.name || 'Maria').split(' ')[0]
   return (
-    <DashboardShell role="student" title="Welcome back, Maria 👋">
+    <DashboardShell role="student" title={`Welcome back, ${firstName} 👋`}>
       <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
         {stats.map((s, i) => (
           <Card key={i} className="p-5">

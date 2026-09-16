@@ -60,7 +60,11 @@ export default function CostCalculator({ portal = 'student' }) {
   const totalPHP = Math.round(total * rate)
 
   return (
-    <DashboardShell role={portal} title="Cost Computation">
+    <DashboardShell role={portal} title="Total Cost of Study Calculator">
+      <div className="mb-5">
+        <h2 className="font-display text-lg font-semibold text-ink-900">Total Cost of Study Calculator</h2>
+        <p className="mt-1 text-sm text-ink-500">Estimate tuition, living, visa, and other study-abroad expenses in one place.</p>
+      </div>
       <div className="grid gap-6 lg:grid-cols-5">
         <Card className="p-6 lg:col-span-3">
           <h3 className="mb-5 font-display text-base font-semibold text-ink-900">Trip Details</h3>

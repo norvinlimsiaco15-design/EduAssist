@@ -2,8 +2,9 @@ import React from 'react'
 import { LineChart, Line, BarChart, Bar, PieChart, Pie, Cell, ResponsiveContainer, XAxis, YAxis, Tooltip, CartesianGrid } from 'recharts'
 import DashboardShell from '../../components/layout/DashboardShell'
 import Card from '../../components/ui/Card'
+import ReportExport from '../../components/reports/ReportExport'
 import { AnimatedCounter } from '../../components/ui/Misc'
-import { monthlyApplications, countryDistribution } from '../../lib/data'
+import { monthlyApplications, countryDistribution, reportPeriod } from '../../lib/data'
 
 const statusBreakdown = [
   { status: 'Contract', count: 9 }, { status: 'Documents', count: 14 },
@@ -13,6 +14,12 @@ const statusBreakdown = [
 export default function Reports() {
   return (
     <DashboardShell role="consultant" title="Reports & Analytics">
+      <ReportExport
+        title="Consultant performance report"
+        periodStart={reportPeriod.start}
+        periodEnd={reportPeriod.end}
+        filename="eduassist-consultant-report.pdf"
+      >
       <div className="grid gap-5 sm:grid-cols-3">
         {[['Total Students', 63], ['Avg. Processing Days', 42], ['Approval Rate', 94]].map(([label, val], i) => (
           <Card key={i} className="p-5">
@@ -78,6 +85,7 @@ export default function Reports() {
           </div>
         </Card>
       </div>
+      </ReportExport>
     </DashboardShell>
   )
 }

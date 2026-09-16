@@ -4,18 +4,16 @@ import DashboardShell from '../../components/layout/DashboardShell'
 import Card from '../../components/ui/Card'
 import Button from '../../components/ui/Button'
 import Modal from '../../components/ui/Modal'
-import { Input, Select } from '../../components/ui/Misc'
-import { users } from '../../lib/data'
-
-const statusStyle = {
-  Active: 'bg-success-50 text-success-500', Invited: 'bg-amber-50 text-amber-700', Suspended: 'bg-red-50 text-red-600',
-}
+import { Badge, Input, Select } from '../../components/ui/Misc'
+import { accountStatusLabels } from '../../lib/data'
+import { getAccounts } from '../../lib/accounts'
 
 export default function UserManagement() {
   const [query, setQuery] = useState('')
   const [inviteOpen, setInviteOpen] = useState(false)
   const [editUser, setEditUser] = useState(null)
   const [deleteUser, setDeleteUser] = useState(null)
+  const users = getAccounts()
   const filtered = users.filter((u) => u.name.toLowerCase().includes(query.toLowerCase()))
 
   return (
@@ -54,7 +52,7 @@ export default function UserManagement() {
                   <td className="py-3.5 pr-4 text-ink-500">{u.email}</td>
                   <td className="py-3.5 pr-4 text-ink-700">{u.role}</td>
                   <td className="py-3.5 pr-4">
-                    <span className={`rounded-full px-2.5 py-1 text-xs font-semibold ${statusStyle[u.status]}`}>{u.status}</span>
+                    <Badge status={u.accountStatus || u.status}>{accountStatusLabels[u.accountStatus] || u.status}</Badge>
                   </td>
                   <td className="py-3.5">
                     <div className="flex gap-1.5">

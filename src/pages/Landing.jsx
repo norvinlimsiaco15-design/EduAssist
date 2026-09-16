@@ -33,7 +33,7 @@ export default function Landing() {
           </nav>
           <div className="flex items-center gap-3">
             <Link to="/login" className="hidden text-sm font-semibold text-ink-700 hover:text-primary-600 sm:block">Sign in</Link>
-            <Link to="/login"><Button size="sm">Get Started</Button></Link>
+            <Link to="/register"><Button size="sm">Get Started</Button></Link>
           </div>
         </div>
       </header>
@@ -55,7 +55,7 @@ export default function Landing() {
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a href="#destinations"><Button size="lg" icon={Globe2}>Explore Countries</Button></a>
-              <Link to="/student/cost-calculator"><Button size="lg" variant="secondary" icon={Calculator}>Estimate Costs</Button></Link>
+              <Link to="/student/cost-calculator"><Button size="lg" variant="secondary" icon={Calculator}>Total Cost of Study Calculator</Button></Link>
             </div>
             <div className="mt-10 flex items-center gap-6 text-sm text-ink-500">
               <div><p className="font-display text-2xl font-bold text-ink-900">10</p>Destinations</div>
@@ -192,7 +192,7 @@ export default function Landing() {
           <GraduationCap className="mx-auto mb-4 text-white/90" size={36} />
           <h2 className="font-display text-3xl font-bold text-white">Ready to plan your journey?</h2>
           <p className="mx-auto mt-3 max-w-md text-primary-100">Create your free account and get a personalized cost estimate in minutes.</p>
-          <Link to="/login" className="mt-7 inline-block">
+          <Link to="/register" className="mt-7 inline-block">
             <Button variant="accent" size="lg">Get Started — It's Free</Button>
           </Link>
         </div>
@@ -206,7 +206,7 @@ export default function Landing() {
             <p className="mt-3 text-sm text-ink-500">Consultancy management and cost system, made simple.</p>
           </div>
           {[
-            { title: 'Product', links: ['Countries', 'Partner Schools', 'Cost Calculator', 'Currency Converter'] },
+            { title: 'Product', links: ['Countries', 'Partner Schools', 'Total Cost of Study Calculator', 'Currency Converter'] },
             { title: 'Company', links: ['About', 'Careers', 'Contact'] },
             { title: 'Legal', links: ['Privacy Policy', 'Terms of Service'] },
           ].map((col) => (

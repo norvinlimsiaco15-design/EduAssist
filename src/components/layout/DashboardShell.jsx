@@ -3,19 +3,20 @@ import { NavLink, useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import {
   LayoutDashboard, Globe2, Building2, Calculator, ArrowLeftRight, FileText,
-  Folder, User, Users, ClipboardList, School, BarChart3, Settings, Wallet,
+  Folder, User, Users, ClipboardList, School, BarChart3, Settings,
   ScrollText, Bell, Search, ChevronDown, Menu, X, LogOut,
 } from 'lucide-react'
 import Modal from '../ui/Modal'
 import Button from '../ui/Button'
 import Logo from '../brand/Logo.jsx'
+import { clearSession, getSession } from '../../lib/accounts'
 
 const NAVS = {
   student: [
     { to: '/student', label: 'Dashboard', icon: LayoutDashboard, end: true },
     { to: '/student/countries', label: 'Countries', icon: Globe2 },
     { to: '/student/schools', label: 'Partner Schools', icon: Building2 },
-    { to: '/student/cost-calculator', label: 'Cost Calculator', icon: Calculator },
+    { to: '/student/cost-calculator', label: 'Total Cost of Study Calculator', icon: Calculator },
     { to: '/student/currency', label: 'Currency Converter', icon: ArrowLeftRight },
     { to: '/student/applications', label: 'My Applications', icon: FileText },
     { to: '/student/documents', label: 'Documents', icon: Folder },
@@ -26,13 +27,16 @@ const NAVS = {
     { to: '/consultant/students', label: 'Students', icon: Users },
     { to: '/consultant/applications', label: 'Applications', icon: ClipboardList },
     { to: '/consultant/schools', label: 'Schools', icon: School },
+    { to: '/consultant/programs', label: 'Programs', icon: ClipboardList },
+    { to: '/consultant/approvals', label: 'Account Approvals', icon: FileText },
     { to: '/consultant/reports', label: 'Reports', icon: BarChart3 },
-    { to: '/consultant/cost-management', label: 'Cost Management', icon: Wallet },
+    { to: '/consultant/cost-management', label: 'Total Cost of Study Calculator', icon: Calculator },
     { to: '/consultant/settings', label: 'Settings', icon: Settings },
   ],
   admin: [
     { to: '/admin', label: 'Dashboard', icon: LayoutDashboard, end: true },
     { to: '/admin/users', label: 'User Management', icon: Users },
+    { to: '/admin/approvals', label: 'Account Approvals', icon: FileText },
     { to: '/admin/countries', label: 'Countries', icon: Globe2 },
     { to: '/admin/schools', label: 'Schools', icon: School },
     { to: '/admin/programs', label: 'Programs', icon: ClipboardList },
@@ -62,7 +66,13 @@ export default function DashboardShell({ role, children, title }) {
   const [logoutOpen, setLogoutOpen] = useState(false)
   const navigate = useNavigate()
   const items = NAVS[role]
-  const meta = ROLE_META[role]
+  const session = getSession()
+  const meta = {
+    ...ROLE_META[role],
+    ...(session && session.role?.toLowerCase().startsWith(role === 'admin' ? 'admin' : role)
+      ? { name: session.name, initials: session.avatar || ROLE_META[role].initials }
+      : {}),
+  }
 
   const SidebarContent = (
     <div className="flex h-full flex-col">
@@ -220,7 +230,7 @@ export default function DashboardShell({ role, children, title }) {
         footer={
           <>
             <Button variant="secondary" onClick={() => setLogoutOpen(false)}>Cancel</Button>
-            <Button variant="danger" icon={LogOut} onClick={() => navigate('/login')}>Logout</Button>
+            <Button variant="danger" icon={LogOut} onClick={() => { clearSession(); navigate('/login') }}>Logout</Button>
           </>
         }
       >

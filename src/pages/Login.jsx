@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Eye, EyeOff, Loader2, AlertCircle, User, Briefcase, ShieldCheck } from 'lucide-react'
 import Button from '../components/ui/Button'
 import Logo from '../components/brand/Logo.jsx'
+import { loginDemoRole } from '../lib/accounts'
 
 export default function Login() {
   const navigate = useNavigate()
@@ -24,6 +25,7 @@ export default function Login() {
   const loginAs = (role) => {
     setLoading(true)
     setTimeout(() => {
+      loginDemoRole(role)
       setLoading(false)
       navigate(`/${role}`)
     }, 700)
@@ -88,6 +90,11 @@ export default function Login() {
             {loading ? <><Loader2 size={18} className="animate-spin" /> Signing in...</> : 'Sign In'}
           </Button>
         </form>
+
+        <p className="mt-4 text-center text-sm text-primary-50">
+          New student?{' '}
+          <Link to="/register" className="font-semibold text-white hover:underline">Create an account</Link>
+        </p>
 
         <div className="my-6 flex items-center gap-3">
           <div className="h-px flex-1 bg-white/25" />

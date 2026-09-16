@@ -1,31 +1,46 @@
 export const countries = [
-  { code: 'AU', name: 'Australia', flag: '🇦🇺', currency: 'AUD', tuition: '$18,000–35,000/yr', living: '$1,400–2,200/mo', schools: 14, image: 'https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?w=800&q=80' },
-  { code: 'CA', name: 'Canada', flag: '🇨🇦', currency: 'CAD', tuition: '$16,000–30,000/yr', living: '$1,200–1,900/mo', schools: 11, image: 'https://images.unsplash.com/photo-1517935706615-2717063c2225?w=800&q=80' },
-  { code: 'DE', name: 'Germany', flag: '🇩🇪', currency: 'EUR', tuition: '$0–3,500/yr', living: '$900–1,300/mo', schools: 9, image: 'https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=800&q=80' },
-  { code: 'NZ', name: 'New Zealand', flag: '🇳🇿', currency: 'NZD', tuition: '$15,000–28,000/yr', living: '$1,100–1,700/mo', schools: 6, image: 'https://images.unsplash.com/photo-1469521669194-babb45599def?w=800&q=80' },
-  { code: 'UK', name: 'United Kingdom', flag: '🇬🇧', currency: 'GBP', tuition: '£12,000–26,000/yr', living: '£900–1,400/mo', schools: 13, image: 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=800&q=80' },
-  { code: 'ES', name: 'Spain', flag: '🇪🇸', currency: 'EUR', tuition: '€6,000–14,000/yr', living: '€700–1,100/mo', schools: 5, image: 'https://images.unsplash.com/photo-1583422409516-2895a77efded?w=800&q=80' },
-  { code: 'US', name: 'United States', flag: '🇺🇸', currency: 'USD', tuition: '$22,000–48,000/yr', living: '$1,300–2,400/mo', schools: 17, image: 'https://images.unsplash.com/photo-1485738422979-f5c462d49f74?w=800&q=80' },
-  { code: 'SG', name: 'Singapore', flag: '🇸🇬', currency: 'SGD', tuition: 'S$18,000–32,000/yr', living: 'S$1,000–1,700/mo', schools: 4, image: 'https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=800&q=80' },
-  { code: 'KR', name: 'South Korea', flag: '🇰🇷', currency: 'KRW', tuition: '₩8M–16M/yr', living: '₩900K–1.5M/mo', schools: 3, image: 'https://images.unsplash.com/photo-1517154421773-0529f29ea451?w=800&q=80' },
-  { code: 'MT', name: 'Malta', flag: '🇲🇹', currency: 'EUR', tuition: '€7,000–13,000/yr', living: '€700–1,000/mo', schools: 2, image: 'https://images.unsplash.com/photo-1602343168117-bb8ffe3e2e9f?w=800&q=80' },
+  { code: 'AU', name: 'Australia', flag: '🇦🇺', currency: 'AUD', region: 'Oceania', status: 'Active', tuition: '$18,000–35,000/yr', living: '$1,400–2,200/mo', schools: 14, image: 'https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?w=800&q=80' },
+  { code: 'CA', name: 'Canada', flag: '🇨🇦', currency: 'CAD', region: 'North America', status: 'Active', tuition: '$16,000–30,000/yr', living: '$1,200–1,900/mo', schools: 11, image: 'https://images.unsplash.com/photo-1517935706615-2717063c2225?w=800&q=80' },
+  { code: 'DE', name: 'Germany', flag: '🇩🇪', currency: 'EUR', region: 'Europe', status: 'Active', tuition: '$0–3,500/yr', living: '$900–1,300/mo', schools: 9, image: 'https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=800&q=80' },
+  { code: 'NZ', name: 'New Zealand', flag: '🇳🇿', currency: 'NZD', region: 'Oceania', status: 'Active', tuition: '$15,000–28,000/yr', living: '$1,100–1,700/mo', schools: 6, image: 'https://images.unsplash.com/photo-1469521669194-babb45599def?w=800&q=80' },
+  { code: 'UK', name: 'United Kingdom', flag: '🇬🇧', currency: 'GBP', region: 'Europe', status: 'Active', tuition: '£12,000–26,000/yr', living: '£900–1,400/mo', schools: 13, image: 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=800&q=80' },
+  { code: 'ES', name: 'Spain', flag: '🇪🇸', currency: 'EUR', region: 'Europe', status: 'Active', tuition: '€6,000–14,000/yr', living: '€700–1,100/mo', schools: 5, image: 'https://images.unsplash.com/photo-1583422409516-2895a77efded?w=800&q=80' },
+  { code: 'US', name: 'United States', flag: '🇺🇸', currency: 'USD', region: 'North America', status: 'Active', tuition: '$22,000–48,000/yr', living: '$1,300–2,400/mo', schools: 17, image: 'https://images.unsplash.com/photo-1485738422979-f5c462d49f74?w=800&q=80' },
+  { code: 'SG', name: 'Singapore', flag: '🇸🇬', currency: 'SGD', region: 'Asia', status: 'Active', tuition: 'S$18,000–32,000/yr', living: 'S$1,000–1,700/mo', schools: 4, image: 'https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=800&q=80' },
+  { code: 'KR', name: 'South Korea', flag: '🇰🇷', currency: 'KRW', region: 'Asia', status: 'Active', tuition: '₩8M–16M/yr', living: '₩900K–1.5M/mo', schools: 3, image: 'https://images.unsplash.com/photo-1517154421773-0529f29ea451?w=800&q=80' },
+  { code: 'MT', name: 'Malta', flag: '🇲🇹', currency: 'EUR', region: 'Europe', status: 'Inactive', tuition: '€7,000–13,000/yr', living: '€700–1,000/mo', schools: 2, image: 'https://images.unsplash.com/photo-1602343168117-bb8ffe3e2e9f?w=800&q=80' },
 ]
 
 export const schools = [
-  { id: 1, name: 'University of Melbourne', country: 'Australia', flag: '🇦🇺', programs: ['Business', 'IT', 'Engineering'], tuition: '$32,000/yr', tuitionUSD: 22400, logo: '🏛️', image: 'https://images.unsplash.com/photo-1592280771190-3e2e4d571952?w=900&q=80' },
-  { id: 2, name: 'University of Toronto', country: 'Canada', flag: '🇨🇦', programs: ['Computer Science', 'Nursing'], tuition: '$28,500/yr', tuitionUSD: 20200, logo: '🏛️', image: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=900&q=80' },
-  { id: 3, name: 'Technical University of Munich', country: 'Germany', flag: '🇩🇪', programs: ['Engineering', 'Data Science'], tuition: '$2,500/yr', tuitionUSD: 2700, logo: '🏛️', image: 'https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=900&q=80' },
-  { id: 4, name: 'University of Auckland', country: 'New Zealand', flag: '🇳🇿', programs: ['Architecture', 'Business'], tuition: '$26,000/yr', tuitionUSD: 15800, logo: '🏛️', image: 'https://images.unsplash.com/photo-1469521669194-babb45599def?w=900&q=80' },
-  { id: 5, name: 'University of Manchester', country: 'United Kingdom', flag: '🇬🇧', programs: ['Law', 'Economics'], tuition: '£24,000/yr', tuitionUSD: 30400, logo: '🏛️', image: 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=900&q=80' },
-  { id: 6, name: 'IE University', country: 'Spain', flag: '🇪🇸', programs: ['International Relations'], tuition: '€13,200/yr', tuitionUSD: 14300, logo: '🏛️', image: 'https://images.unsplash.com/photo-1583422409516-2895a77efded?w=900&q=80' },
-  { id: 7, name: 'University of California, Los Angeles', country: 'United States', flag: '🇺🇸', programs: ['Computer Science', 'Business', 'Engineering'], tuition: '$38,000/yr', tuitionUSD: 38000, logo: '🏛️', image: 'https://images.unsplash.com/photo-1485738422979-f5c462d49f74?w=900&q=80' },
-  { id: 8, name: 'New York University', country: 'United States', flag: '🇺🇸', programs: ['Business', 'Law', 'Data Science'], tuition: '$56,000/yr', tuitionUSD: 56000, logo: '🏛️', image: 'https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=900&q=80' },
-  { id: 9, name: 'National University of Singapore', country: 'Singapore', flag: '🇸🇬', programs: ['Computer Science', 'Engineering', 'Business'], tuition: 'S$22,000/yr', tuitionUSD: 16300, logo: '🏛️', image: 'https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=900&q=80' },
-  { id: 10, name: 'Nanyang Technological University', country: 'Singapore', flag: '🇸🇬', programs: ['Engineering', 'IT', 'Data Science'], tuition: 'S$18,500/yr', tuitionUSD: 13700, logo: '🏛️', image: 'https://images.unsplash.com/photo-1565967511849-76a60a69faaf?w=900&q=80' },
-  { id: 11, name: 'Seoul National University', country: 'South Korea', flag: '🇰🇷', programs: ['Engineering', 'Computer Science', 'International Relations'], tuition: '₩10M/yr', tuitionUSD: 7300, logo: '🏛️', image: 'https://images.unsplash.com/photo-1517154421773-0529f29ea451?w=900&q=80' },
-  { id: 12, name: 'Korea University', country: 'South Korea', flag: '🇰🇷', programs: ['Business', 'Economics', 'IT'], tuition: '₩12M/yr', tuitionUSD: 8800, logo: '🏛️', image: 'https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=900&q=80' },
-  { id: 13, name: 'University of Malta', country: 'Malta', flag: '🇲🇹', programs: ['IT', 'Business', 'International Relations'], tuition: '€8,500/yr', tuitionUSD: 9200, logo: '🏛️', image: 'https://images.unsplash.com/photo-1602343168117-bb8ffe3e2e9f?w=900&q=80' },
-  { id: 14, name: 'Middlesex University Malta', country: 'Malta', flag: '🇲🇹', programs: ['Computer Science', 'Business'], tuition: '€12,500/yr', tuitionUSD: 13500, logo: '🏛️', image: 'https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=900&q=80' },
+  { id: 1, name: 'University of Melbourne', country: 'Australia', flag: '🇦🇺', schoolType: 'University', accreditationStatus: 'Accredited', programs: ['Business', 'IT', 'Engineering'], tuition: '$32,000/yr', tuitionUSD: 22400, logo: '🏛️', image: 'https://images.unsplash.com/photo-1592280771190-3e2e4d571952?w=900&q=80' },
+  { id: 2, name: 'University of Toronto', country: 'Canada', flag: '🇨🇦', schoolType: 'University', accreditationStatus: 'Accredited', programs: ['Computer Science', 'Nursing'], tuition: '$28,500/yr', tuitionUSD: 20200, logo: '🏛️', image: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=900&q=80' },
+  { id: 3, name: 'Technical University of Munich', country: 'Germany', flag: '🇩🇪', schoolType: 'University', accreditationStatus: 'Accredited', programs: ['Engineering', 'Data Science'], tuition: '$2,500/yr', tuitionUSD: 2700, logo: '🏛️', image: 'https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=900&q=80' },
+  { id: 4, name: 'University of Auckland', country: 'New Zealand', flag: '🇳🇿', schoolType: 'University', accreditationStatus: 'Accredited', programs: ['Architecture', 'Business'], tuition: '$26,000/yr', tuitionUSD: 15800, logo: '🏛️', image: 'https://images.unsplash.com/photo-1469521669194-babb45599def?w=900&q=80' },
+  { id: 5, name: 'University of Manchester', country: 'United Kingdom', flag: '🇬🇧', schoolType: 'University', accreditationStatus: 'Accredited', programs: ['Law', 'Economics'], tuition: '£24,000/yr', tuitionUSD: 30400, logo: '🏛️', image: 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=900&q=80' },
+  { id: 6, name: 'IE University', country: 'Spain', flag: '🇪🇸', schoolType: 'University', accreditationStatus: 'Accredited', programs: ['International Relations'], tuition: '€13,200/yr', tuitionUSD: 14300, logo: '🏛️', image: 'https://images.unsplash.com/photo-1583422409516-2895a77efded?w=900&q=80' },
+  { id: 7, name: 'University of California, Los Angeles', country: 'United States', flag: '🇺🇸', schoolType: 'University', accreditationStatus: 'Accredited', programs: ['Computer Science', 'Business', 'Engineering'], tuition: '$38,000/yr', tuitionUSD: 38000, logo: '🏛️', image: 'https://images.unsplash.com/photo-1485738422979-f5c462d49f74?w=900&q=80' },
+  { id: 8, name: 'New York University', country: 'United States', flag: '🇺🇸', schoolType: 'University', accreditationStatus: 'Accredited', programs: ['Business', 'Law', 'Data Science'], tuition: '$56,000/yr', tuitionUSD: 56000, logo: '🏛️', image: 'https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=900&q=80' },
+  { id: 9, name: 'National University of Singapore', country: 'Singapore', flag: '🇸🇬', schoolType: 'University', accreditationStatus: 'Accredited', programs: ['Computer Science', 'Engineering', 'Business'], tuition: 'S$22,000/yr', tuitionUSD: 16300, logo: '🏛️', image: 'https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=900&q=80' },
+  { id: 10, name: 'Nanyang Technological University', country: 'Singapore', flag: '🇸🇬', schoolType: 'University', accreditationStatus: 'Accredited', programs: ['Engineering', 'IT', 'Data Science'], tuition: 'S$18,500/yr', tuitionUSD: 13700, logo: '🏛️', image: 'https://images.unsplash.com/photo-1565967511849-76a60a69faaf?w=900&q=80' },
+  { id: 11, name: 'Seoul National University', country: 'South Korea', flag: '🇰🇷', schoolType: 'University', accreditationStatus: 'Accredited', programs: ['Engineering', 'Computer Science', 'International Relations'], tuition: '₩10M/yr', tuitionUSD: 7300, logo: '🏛️', image: 'https://images.unsplash.com/photo-1517154421773-0529f29ea451?w=900&q=80' },
+  { id: 12, name: 'Korea University', country: 'South Korea', flag: '🇰🇷', schoolType: 'University', accreditationStatus: 'Provisional', programs: ['Business', 'Economics', 'IT'], tuition: '₩12M/yr', tuitionUSD: 8800, logo: '🏛️', image: 'https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=900&q=80' },
+  { id: 13, name: 'University of Malta', country: 'Malta', flag: '🇲🇹', schoolType: 'University', accreditationStatus: 'Accredited', programs: ['IT', 'Business', 'International Relations'], tuition: '€8,500/yr', tuitionUSD: 9200, logo: '🏛️', image: 'https://images.unsplash.com/photo-1602343168117-bb8ffe3e2e9f?w=900&q=80' },
+  { id: 14, name: 'Middlesex University Malta', country: 'Malta', flag: '🇲🇹', schoolType: 'College', accreditationStatus: 'Pending', programs: ['Computer Science', 'Business'], tuition: '€12,500/yr', tuitionUSD: 13500, logo: '🏛️', image: 'https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=900&q=80' },
+]
+
+export const programs = [
+  { id: 1, name: 'BS Information Technology', school: 'University of Melbourne', schoolId: 1, degreeLevel: 'Bachelor', tuition: '$32,000/yr', tuitionUSD: 22400, duration: '4 years', overview: 'A professionally accredited IT degree covering software engineering, networks, and data systems with internship pathways in Melbourne.' },
+  { id: 2, name: 'BS Nursing', school: 'University of Toronto', schoolId: 2, degreeLevel: 'Bachelor', tuition: '$28,500/yr', tuitionUSD: 20200, duration: '4 years', overview: 'Clinical nursing education with hospital placements across the Greater Toronto Area and eligibility support for Canadian licensure.' },
+  { id: 3, name: 'MS Data Science', school: 'Technical University of Munich', schoolId: 3, degreeLevel: 'Master', tuition: '$2,500/yr', tuitionUSD: 2700, duration: '2 years', overview: 'Research-led master’s in statistical learning, ML engineering, and applied analytics taught in English in Munich.' },
+  { id: 4, name: 'BS Architecture', school: 'University of Auckland', schoolId: 4, degreeLevel: 'Bachelor', tuition: '$26,000/yr', tuitionUSD: 15800, duration: '5 years', overview: 'Studio-based architecture program focused on sustainable Pacific design and professional registration pathways in New Zealand.' },
+  { id: 5, name: 'BA Economics', school: 'University of Manchester', schoolId: 5, degreeLevel: 'Bachelor', tuition: '£24,000/yr', tuitionUSD: 30400, duration: '3 years', overview: 'Quantitative economics with optional year in industry and strong placement into UK graduate schemes.' },
+  { id: 6, name: 'BA International Relations', school: 'IE University', schoolId: 6, degreeLevel: 'Bachelor', tuition: '€13,200/yr', tuitionUSD: 14300, duration: '4 years', overview: 'Multilingual IR program with policy labs, EU study trips, and internship options in Madrid and Segovia.' },
+  { id: 7, name: 'MS Computer Science', school: 'University of California, Los Angeles', schoolId: 7, degreeLevel: 'Master', tuition: '$38,000/yr', tuitionUSD: 38000, duration: '2 years', overview: 'Graduate CS with tracks in AI, systems, and software, plus access to Southern California tech internships.' },
+  { id: 8, name: 'MBA', school: 'New York University', schoolId: 8, degreeLevel: 'Master', tuition: '$56,000/yr', tuitionUSD: 56000, duration: '2 years', overview: 'Full-time MBA emphasizing finance, entrepreneurship, and global immersion modules in New York City.' },
+  { id: 9, name: 'BEng Computer Engineering', school: 'National University of Singapore', schoolId: 9, degreeLevel: 'Bachelor', tuition: 'S$22,000/yr', tuitionUSD: 16300, duration: '4 years', overview: 'Hardware-software engineering degree with industry attachments across Singapore’s electronics sector.' },
+  { id: 10, name: 'Graduate Diploma in IT', school: 'Nanyang Technological University', schoolId: 10, degreeLevel: 'Diploma', tuition: 'S$18,500/yr', tuitionUSD: 13700, duration: '1 year', overview: 'Conversion diploma for non-IT graduates covering programming, databases, and cloud fundamentals.' },
+  { id: 11, name: 'BS Computer Science', school: 'Seoul National University', schoolId: 11, degreeLevel: 'Bachelor', tuition: '₩10M/yr', tuitionUSD: 7300, duration: '4 years', overview: 'Competitive CS undergraduate program with Korean- and English-taught modules and research lab placements.' },
+  { id: 12, name: 'BA Business Administration', school: 'Korea University', schoolId: 12, degreeLevel: 'Bachelor', tuition: '₩12M/yr', tuitionUSD: 8800, duration: '4 years', overview: 'Business core with Asia-Pacific strategy electives and exchange options through the KU partner network.' },
 ]
 
 export const tuitionRanges = [
@@ -34,6 +49,13 @@ export const tuitionRanges = [
   { id: 'mid', label: '$15,000–30,000/yr', min: 15000, max: 30000 },
   { id: 'over30', label: '$30,000+/yr', min: 30001, max: Infinity },
 ]
+
+export const schoolTypes = ['University', 'College', 'Polytechnic']
+export const accreditationStatuses = ['Accredited', 'Provisional', 'Pending']
+export const degreeLevels = ['Bachelor', 'Master', 'Diploma']
+export const continents = ['Oceania', 'North America', 'Europe', 'Asia']
+
+export const VISA_PROCESSING_FEE_PHP = 500
 
 export const applications = [
   { id: 'APP-2201', student: 'Maria Santos', avatar: 'MS', school: 'University of Melbourne', country: 'Australia', flag: '🇦🇺', program: 'BS Information Technology', status: 'COE Processing' },
@@ -52,6 +74,19 @@ export const statusColors = {
   'Waiting for Result': 'bg-slate-100 text-slate-600 border-slate-200',
   'Completed': 'bg-success-50 text-success-500 border-success-500/20',
   'Approved': 'bg-success-50 text-success-500 border-success-500/20',
+  Active: 'bg-success-50 text-success-500 border-success-500/20',
+  Inactive: 'bg-slate-100 text-slate-600 border-slate-200',
+  pending_payment: 'bg-amber-50 text-amber-700 border-amber-200',
+  pending_approval: 'bg-accent-50 text-accent-600 border-accent-400/30',
+  active: 'bg-success-50 text-success-500 border-success-500/20',
+  rejected: 'bg-red-50 text-red-600 border-red-200',
+}
+
+export const accountStatusLabels = {
+  pending_payment: 'Pending Payment',
+  pending_approval: 'Pending Approval',
+  active: 'Active',
+  rejected: 'Rejected',
 }
 
 export const timelineStages = [
@@ -72,12 +107,15 @@ export const documents = [
 ]
 
 export const students = [
-  { id: 1, name: 'Maria Santos', avatar: 'MS', country: 'Australia', flag: '🇦🇺', program: 'BS Information Technology', status: 'COE Processing', email: 'maria.santos@email.com' },
-  { id: 2, name: 'Jared Cruz', avatar: 'JC', country: 'Canada', flag: '🇨🇦', program: 'BS Nursing', status: 'Contract Signed', email: 'jared.cruz@email.com' },
-  { id: 3, name: 'Angela Reyes', avatar: 'AR', country: 'Germany', flag: '🇩🇪', program: 'MS Data Science', status: 'Lodged', email: 'angela.reyes@email.com' },
-  { id: 4, name: 'Paolo Bautista', avatar: 'PB', country: 'New Zealand', flag: '🇳🇿', program: 'BS Architecture', status: 'Waiting for Result', email: 'paolo.bautista@email.com' },
-  { id: 5, name: 'Kim De Leon', avatar: 'KD', country: 'United Kingdom', flag: '🇬🇧', program: 'BA Economics', status: 'COE Processing', email: 'kim.deleon@email.com' },
-  { id: 6, name: 'Noel Fernandez', avatar: 'NF', country: 'Spain', flag: '🇪🇸', program: 'BA International Relations', status: 'Completed', email: 'noel.fernandez@email.com' },
+  { id: 1, name: 'Maria Santos', avatar: 'MS', country: 'Australia', flag: '🇦🇺', program: 'BS Information Technology', status: 'COE Processing', email: 'maria.santos@email.com', accountStatus: 'active', paymentStatus: 'paid', paymentDate: 'Jul 02, 2026', paymentReference: 'EA-PAY-104821' },
+  { id: 2, name: 'Jared Cruz', avatar: 'JC', country: 'Canada', flag: '🇨🇦', program: 'BS Nursing', status: 'Contract Signed', email: 'jared.cruz@email.com', accountStatus: 'active', paymentStatus: 'paid', paymentDate: 'Jul 18, 2026', paymentReference: 'EA-PAY-105903' },
+  { id: 3, name: 'Angela Reyes', avatar: 'AR', country: 'Germany', flag: '🇩🇪', program: 'MS Data Science', status: 'Lodged', email: 'angela.reyes@email.com', accountStatus: 'active', paymentStatus: 'paid', paymentDate: 'Jun 21, 2026', paymentReference: 'EA-PAY-098441' },
+  { id: 4, name: 'Paolo Bautista', avatar: 'PB', country: 'New Zealand', flag: '🇳🇿', program: 'BS Architecture', status: 'Waiting for Result', email: 'paolo.bautista@email.com', accountStatus: 'active', paymentStatus: 'paid', paymentDate: 'May 14, 2026', paymentReference: 'EA-PAY-087220' },
+  { id: 5, name: 'Kim De Leon', avatar: 'KD', country: 'United Kingdom', flag: '🇬🇧', program: 'BA Economics', status: 'COE Processing', email: 'kim.deleon@email.com', accountStatus: 'active', paymentStatus: 'paid', paymentDate: 'Aug 01, 2026', paymentReference: 'EA-PAY-112004' },
+  { id: 6, name: 'Noel Fernandez', avatar: 'NF', country: 'Spain', flag: '🇪🇸', program: 'BA International Relations', status: 'Completed', email: 'noel.fernandez@email.com', accountStatus: 'active', paymentStatus: 'paid', paymentDate: 'Mar 09, 2026', paymentReference: 'EA-PAY-071339' },
+  { id: 7, name: 'Liza Mendoza', avatar: 'LM', country: 'Singapore', flag: '🇸🇬', program: 'BEng Computer Engineering', status: 'Contract Signed', email: 'liza.mendoza@email.com', accountStatus: 'pending_payment', paymentStatus: 'unpaid', paymentDate: null, paymentReference: null },
+  { id: 8, name: 'Carlo Villanueva', avatar: 'CV', country: 'Australia', flag: '🇦🇺', program: 'BS Information Technology', status: 'Contract Signed', email: 'carlo.villanueva@email.com', accountStatus: 'pending_approval', paymentStatus: 'paid', paymentDate: 'Sep 12, 2026', paymentReference: 'EA-PAY-118442' },
+  { id: 9, name: 'Nina Gomez', avatar: 'NG', country: 'Canada', flag: '🇨🇦', program: 'BS Nursing', status: 'Contract Signed', email: 'nina.gomez@email.com', accountStatus: 'rejected', paymentStatus: 'paid', paymentDate: 'Sep 04, 2026', paymentReference: 'EA-PAY-117880' },
 ]
 
 export const exchangeRates = {
@@ -90,6 +128,11 @@ export const monthlyApplications = [
   { month: 'Jul', applications: 31 }, { month: 'Aug', applications: 27 },
 ]
 
+export const reportPeriod = {
+  start: 'March 1, 2026',
+  end: 'August 31, 2026',
+}
+
 export const countryDistribution = [
   { name: 'Australia', value: 34, color: '#2563EB' },
   { name: 'Canada', value: 22, color: '#60A5FA' },
@@ -99,10 +142,13 @@ export const countryDistribution = [
 ]
 
 export const users = [
-  { id: 1, name: 'Maria Santos', email: 'maria.santos@email.com', role: 'Student', status: 'Active' },
-  { id: 2, name: 'Carla Dizon', email: 'carla.dizon@eduassist.ph', role: 'Consultant', status: 'Active' },
-  { id: 3, name: 'Renz Aquino', email: 'renz.aquino@eduassist.ph', role: 'Consultant', status: 'Active' },
-  { id: 4, name: 'Jared Cruz', email: 'jared.cruz@email.com', role: 'Student', status: 'Invited' },
-  { id: 5, name: 'Admin User', email: 'admin@eduassist.ph', role: 'Administrator', status: 'Active' },
-  { id: 6, name: 'Angela Reyes', email: 'angela.reyes@email.com', role: 'Student', status: 'Suspended' },
+  { id: 1, name: 'Maria Santos', email: 'maria.santos@email.com', role: 'Student', status: 'Active', accountStatus: 'active', paymentStatus: 'paid', paymentDate: 'Jul 02, 2026', paymentReference: 'EA-PAY-104821' },
+  { id: 2, name: 'Carla Dizon', email: 'carla.dizon@eduassist.ph', role: 'Consultant', status: 'Active', accountStatus: 'active', paymentStatus: 'n/a', paymentDate: null, paymentReference: null },
+  { id: 3, name: 'Renz Aquino', email: 'renz.aquino@eduassist.ph', role: 'Consultant', status: 'Active', accountStatus: 'active', paymentStatus: 'n/a', paymentDate: null, paymentReference: null },
+  { id: 4, name: 'Jared Cruz', email: 'jared.cruz@email.com', role: 'Student', status: 'Active', accountStatus: 'active', paymentStatus: 'paid', paymentDate: 'Jul 18, 2026', paymentReference: 'EA-PAY-105903' },
+  { id: 5, name: 'Admin User', email: 'admin@eduassist.ph', role: 'Administrator', status: 'Active', accountStatus: 'active', paymentStatus: 'n/a', paymentDate: null, paymentReference: null },
+  { id: 6, name: 'Angela Reyes', email: 'angela.reyes@email.com', role: 'Student', status: 'Active', accountStatus: 'active', paymentStatus: 'paid', paymentDate: 'Jun 21, 2026', paymentReference: 'EA-PAY-098441' },
+  { id: 7, name: 'Liza Mendoza', email: 'liza.mendoza@email.com', role: 'Student', status: 'Pending Payment', accountStatus: 'pending_payment', paymentStatus: 'unpaid', paymentDate: null, paymentReference: null },
+  { id: 8, name: 'Carlo Villanueva', email: 'carlo.villanueva@email.com', role: 'Student', status: 'Pending Approval', accountStatus: 'pending_approval', paymentStatus: 'paid', paymentDate: 'Sep 12, 2026', paymentReference: 'EA-PAY-118442' },
+  { id: 9, name: 'Nina Gomez', email: 'nina.gomez@email.com', role: 'Student', status: 'Rejected', accountStatus: 'rejected', paymentStatus: 'paid', paymentDate: 'Sep 04, 2026', paymentReference: 'EA-PAY-117880' },
 ]

@@ -1,22 +1,29 @@
 import React from 'react'
-import { useParams } from 'react-router-dom'
-import { MapPin, CheckCircle2 } from 'lucide-react'
+import { Link, useParams } from 'react-router-dom'
+import { MapPin, CheckCircle2, Pencil, ArrowLeft } from 'lucide-react'
 import DashboardShell from '../../components/layout/DashboardShell'
 import Card from '../../components/ui/Card'
 import Button from '../../components/ui/Button'
-import { schools } from '../../lib/data'
+import { programs, schools } from '../../lib/data'
 
 const requirements = [
   'Completed application form', 'Certified transcript of records', 'Valid passport (6+ months validity)',
   'English proficiency test (IELTS/TOEFL)', 'Statement of purpose', 'Proof of financial capacity',
 ]
 
-export default function SchoolDetails() {
+export default function SchoolDetails({ portal = 'student' }) {
   const { id } = useParams()
   const school = schools.find((s) => String(s.id) === id) || schools[0]
+  const offered = programs.filter((p) => p.schoolId === school.id)
+  const canEdit = portal === 'admin'
+  const canApply = portal === 'student'
+  const backTo = portal === 'student' ? '/student/schools' : portal === 'consultant' ? '/consultant/schools' : '/admin/schools'
 
   return (
-    <DashboardShell role="student" title="School Details">
+    <DashboardShell role={portal} title="School Details">
+      <Link to={backTo} className="mb-4 inline-flex items-center gap-1.5 text-sm font-semibold text-primary-600">
+        <ArrowLeft size={15} /> Back to schools
+      </Link>
       <Card className="overflow-hidden p-0">
         <div className="h-56 w-full bg-cover bg-center sm:h-72" style={{ backgroundImage: `url(${school.image})` }} />
         <div className="p-6 sm:p-8">
@@ -26,9 +33,13 @@ export default function SchoolDetails() {
               <div>
                 <h1 className="font-display text-xl font-bold text-ink-900 sm:text-2xl">{school.name}</h1>
                 <p className="mt-1 flex items-center gap-1.5 text-sm text-ink-500"><MapPin size={14} /> {school.flag} {school.country}</p>
+                <p className="mt-1 text-xs font-medium text-ink-500">{school.schoolType} · {school.accreditationStatus}</p>
               </div>
             </div>
-            <Button size="lg">Apply Now</Button>
+            <div className="flex gap-2">
+              {canEdit && <Button variant="secondary" icon={Pencil}>Edit school</Button>}
+              {canApply && <Button size="lg">Apply Now</Button>}
+            </div>
           </div>
 
           <p className="mt-6 max-w-2xl text-sm leading-relaxed text-ink-700">
@@ -50,11 +61,23 @@ export default function SchoolDetails() {
 
           <div className="mt-6">
             <p className="mb-2 text-sm font-semibold text-ink-900">Programs offered</p>
-            <div className="flex flex-wrap gap-2">
-              {school.programs.map((p) => (
-                <span key={p} className="rounded-full bg-primary-50 px-3 py-1.5 text-xs font-semibold text-primary-700">{p}</span>
-              ))}
-            </div>
+            {offered.length > 0 ? (
+              <div className="grid gap-3 sm:grid-cols-2">
+                {offered.map((p) => (
+                  <Link key={p.id} to={`/${portal}/programs/${p.id}`} className="rounded-xl2 border border-ink-900/5 bg-ink-900/[0.02] p-4 transition hover:border-primary-200 hover:bg-primary-50/50">
+                    <p className="text-xs font-semibold uppercase tracking-wide text-primary-600">{p.degreeLevel}</p>
+                    <p className="mt-1 text-sm font-semibold text-ink-900">{p.name}</p>
+                    <p className="mt-0.5 text-xs text-ink-500">{p.tuition} · {p.duration}</p>
+                  </Link>
+                ))}
+              </div>
+            ) : (
+              <div className="flex flex-wrap gap-2">
+                {school.programs.map((p) => (
+                  <span key={p} className="rounded-full bg-primary-50 px-3 py-1.5 text-xs font-semibold text-primary-700">{p}</span>
+                ))}
+              </div>
+            )}
           </div>
 
           <div className="mt-6 h-48 w-full rounded-xl2 bg-ink-900/5 flex items-center justify-center text-sm text-ink-500">
